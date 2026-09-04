@@ -69,12 +69,6 @@ src/
         ├── PontuacaoDAO.java
         ├── SolicitacaoColetaDAO.java
         └── UsuarioDAO.java
-🚀 Tecnologias Utilizadas
-Linguagem: Java
-
-Banco de Dados: Relacional (MySQL / PostgreSQL / Oracle / SQL Server)
-
-Padrão de Projeto: DAO (Data Access Object) e DTO/Model
 
 Conectividade: JDBC (Java Database Connectivity)
 
@@ -82,40 +76,3 @@ Conectividade: JDBC (Java Database Connectivity)
 Pré-requisitos
 JDK (Java Development Kit) instalado (versão 11 ou superior recomendada).
 
-Driver JDBC do banco de dados utilizado adicionado ao classpath ou dependências do projeto.
-
-Banco de Dados configurado e rodando.
-
-Passos para execução:
-Clonar o repositório:
-
-Bash
-git clone https://github.com/seu-usuario/seu-repositorio-backend.git
-Configurar a Conexão com o Banco de Dados:
-Abra a classe Organização/Conexao_Banco.java e ajuste as credenciais de acesso de acordo com o seu ambiente local:
-
-Java
-String url = "jdbc:seu_banco://localhost:3306/nome_do_banco";
-String user = "seu_usuario";
-String password = "sua_senha";
-Compilar e Executar:
-Abra o projeto na sua IDE de preferência (Eclipse, IntelliJ IDEA, NetBeans) ou compile via terminal:
-
-Bash
-javac -d bin src/Organização/*.java src/Organização/Model/*.java src/Organização/Dao/*.java
-📝 Regras de Negócio e Modelo de Dados (Resumo)
-Carteira & Pontuação:
-
-Toda ação de entrega em PEV ou coleta realizada gera movimentação (PontosMovimentacaoModel) associada à carteira do usuário (CarteiraModel).
-
-Coletas e Motoristas:
-
-Uma SolicitacaoColetaModel pode ser transformada em uma ColetaModel e ser atribuída a um MotoristaModel.
-
-PEV (Ponto de Entrega Voluntária):
-
-Registra entregas feitas diretamente nos pontos autorizados através da classe EntregaPevDAO.
-
-Certificados & Eventos:
-
-A participação de usuários em eventos sustentáveis gera histórico e emissão de certificados comprovando o engajamento ecológico.
