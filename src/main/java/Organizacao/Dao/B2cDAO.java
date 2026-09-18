@@ -14,11 +14,12 @@ public class B2cDAO {
 
     // CREATE
     public void inserirB2c(B2cModel b2c) {
-        String sql = "INSERT INTO B2c (cpf, telefone) VALUES (?, ?)";
+        String sql = "INSERT INTO B2c ( cpf, telefone, id_usuario) VALUES (?, ?, ?)";
 
         try (Connection conexao = Conexao_Banco.conectar();
              PreparedStatement stmt = conexao.prepareStatement(sql)) {
 
+            stmt.setInt(3, b2c.getId_usuario());
             stmt.setString(1, b2c.getCpf());
             stmt.setString(2, b2c.getTelefone());
 
@@ -40,9 +41,9 @@ public class B2cDAO {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                int id_usuario = rs.getInt("id_usuario");
                 String cpf = rs.getString("cpf");
                 String telefone = rs.getString("telefone");
+                int id_usuario = rs.getInt("id_usuario");
 
                 B2cModel novoB2c = new B2cModel(id_usuario, cpf, telefone);
                 listaB2c.add(novoB2c);
