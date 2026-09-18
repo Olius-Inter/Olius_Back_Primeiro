@@ -54,5 +54,5 @@ out/
 .DS_Store
 Thumbs.db
 
-# Configurações locais ou dados sensíveis (se houver)
+# Configurações locais ou dados sensíveis
 *.env.example
